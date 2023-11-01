@@ -1,5 +1,5 @@
 const db = require('../models');
-const { BlogPost, PostCategory } = require('../models');
+const { BlogPost, PostCategory, User, Category } = require('../models');
 const { createSchema } = require('../validations/post.schemas');
 
 const create = async ({ title, content, categoryIds, userId }) => {
@@ -27,6 +27,17 @@ const create = async ({ title, content, categoryIds, userId }) => {
   }
 };
 
+const listAll = async () => {
+  const courses = await BlogPost.findAll({
+    include: [
+      { model: User, as: 'user', attributes: { exclude: ['password'] } },
+      { model: Category, as: 'categories', through: { attributes: [] } },
+    ],
+  });
+  return { statusCode: 'SUCCESSFUL', data: courses };
+};
+
 module.exports = {
   create,
+  listAll,
 };

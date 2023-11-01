@@ -7,10 +7,10 @@ const create = async (req, res) => {
   return res.status(httpStatusMap(response.statusCode)).json(response.data);
 };
 
-// const listAll = async (_req, res) => {
-//   const response = await postService.listAll();
-//   return res.status(httpStatusMap(response.statusCode)).json(response.data);
-// };
+const listAll = async (_req, res) => {
+  const response = await postService.listAll();
+  return res.status(httpStatusMap(response.statusCode)).json(response.data);
+};
 
 // const find = async (req, res) => {
 //   const { id } = req.params;
@@ -20,4 +20,5 @@ const create = async (req, res) => {
 
 module.exports = {
   create,
+  listAll,
 };
