@@ -7,6 +7,12 @@ const createSchema = Joi.object({
   userId: Joi.number().required(),
 });
 
+const updateSchema = Joi.object({
+  title: Joi.string().required(),
+  content: Joi.string().required(),
+});
+
 module.exports = {
   createSchema,
+  updateSchema,
 };

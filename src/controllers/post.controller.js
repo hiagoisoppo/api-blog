@@ -18,8 +18,16 @@ const find = async (req, res) => {
   return res.status(httpStatusMap(response.statusCode)).json(response.data);
 };
 
+const update = async (req, res) => {
+  const { id } = req.params;
+  const { user } = req;
+  const response = await postService.update({ postId: id, userId: user.id, ...req.body });
+  return res.status(httpStatusMap(response.statusCode)).json(response.data);
+};
+
 module.exports = {
   create,
   listAll,
   find,
+  update,
 };
