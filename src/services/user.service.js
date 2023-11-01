@@ -14,7 +14,12 @@ const findById = async (id) => {
   const user = await User.findByPk(id, {
     attributes: { exclude: ['password'] },
   });
-  return user;
+
+  if (!user) {
+    return { statusCode: 'NOT_FOUND', data: { message: 'User does not exist' } };
+  }
+
+  return { statusCode: 'SUCCESSFUL', data: user };
 };
 
 const create = async ({ displayName, email, password, image = '' }) => {
