@@ -11,7 +11,7 @@ const BlogPostSchema = (sequelize, DataTypes) => {
     updated: DataTypes.DATE,
     userId: DataTypes.INTEGER,
   }, {
-    tableName: 'blogPosts',
+    tableName: 'blog_posts',
     underscored: true,
     timestamps: false,
   });

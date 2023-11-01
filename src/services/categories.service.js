@@ -17,7 +17,18 @@ const listAll = async () => {
   return { statusCode: 'SUCCESSFUL', data: categories };
 };
 
+const findById = async (id) => {
+  const category = await Category.findByPk(id);
+
+  if (!category) {
+    return { statusCode: 'NOT_FOUND', data: { message: 'Category does not exist' } };
+  }
+
+  return { statusCode: 'SUCCESSFUL', data: category };
+};
+
 module.exports = {
   create,
   listAll,
+  findById,
 };
