@@ -34,8 +34,14 @@ const create = async ({ displayName, email, password, image = '' }) => {
   return { statusCode: 'CREATED', data: { token } };
 };
 
+const listAll = async () => {
+  const users = await User.findAll({ attributes: { exclude: ['password'] } });
+  return { statusCode: 'SUCCESSFUL', data: users };
+};
+
 module.exports = {
   create,
   findByEmail,
   findById,
+  listAll,
 };

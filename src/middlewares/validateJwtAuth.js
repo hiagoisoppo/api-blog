@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
   try {
     const token = extractJwToken(authorization);
     const user = validateJwToken(token);
-    req.user = user.data;
+    req.user = user;
     next();
   } catch (err) {
     return res.status(httpStatusMap('UNAUTHORIZED')).json({ message: 'Expired or invalid token' });

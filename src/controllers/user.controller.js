@@ -6,6 +6,12 @@ const create = async (req, res) => {
   return res.status(httpStatusMap(response.statusCode)).json(response.data);
 };
 
+const listAll = async (req, res) => {
+  const response = await userService.listAll();
+  return res.status(httpStatusMap(response.statusCode)).json(response.data);
+};
+
 module.exports = {
   create,
+  listAll,
 };
