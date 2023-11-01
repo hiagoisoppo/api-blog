@@ -22,11 +22,14 @@ const create = async ({ name }) => {
   return { statusCode: 'CREATED', data: category };
 };
 
-// const listAll = async () => {
-//   const users = await User.findAll({ attributes: { exclude: ['password'] } });
-//   return { statusCode: 'SUCCESSFUL', data: users };
-// };
+const listAll = async () => {
+  const categories = await Category.findAll({
+    order: [['id', 'ASC']],
+  });
+  return { statusCode: 'SUCCESSFUL', data: categories };
+};
 
 module.exports = {
   create,
+  listAll,
 };
