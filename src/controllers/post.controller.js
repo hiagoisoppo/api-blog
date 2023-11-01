@@ -12,13 +12,14 @@ const listAll = async (_req, res) => {
   return res.status(httpStatusMap(response.statusCode)).json(response.data);
 };
 
-// const find = async (req, res) => {
-//   const { id } = req.params;
-//   const response = await postService.findById(id);
-//   return res.status(httpStatusMap(response.statusCode)).json(response.data);
-// };
+const find = async (req, res) => {
+  const { id } = req.params;
+  const response = await postService.findById(id);
+  return res.status(httpStatusMap(response.statusCode)).json(response.data);
+};
 
 module.exports = {
   create,
   listAll,
+  find,
 };

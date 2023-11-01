@@ -4,7 +4,7 @@ const { validateJwtAuth, validateJwtUser } = require('../middlewares');
 
 router.get('/', validateJwtAuth, validateJwtUser, postController.listAll);
 
-// router.get('/:id', validateJwtAuth, validateJwtUser, userController.find);
+router.get('/:id', validateJwtAuth, validateJwtUser, postController.find);
 
 router.post('/', validateJwtAuth, validateJwtUser, postController.create);
 

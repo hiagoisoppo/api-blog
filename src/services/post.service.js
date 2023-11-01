@@ -37,7 +37,21 @@ const listAll = async () => {
   return { statusCode: 'SUCCESSFUL', data: courses };
 };
 
+const findById = async (id) => {
+  const course = await BlogPost.findByPk(id, {
+    include: [
+      { model: User, as: 'user', attributes: { exclude: ['password'] } },
+      { model: Category, as: 'categories', through: { attributes: [] } },
+    ],
+  });
+
+  if (!course) return { statusCode: 'NOT_FOUND', data: { message: 'Post does not exist' } };
+
+  return { statusCode: 'SUCCESSFUL', data: course };
+};
+
 module.exports = {
   create,
   listAll,
+  findById,
 };
