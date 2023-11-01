@@ -10,6 +10,13 @@ const findByEmail = async (email) => {
   return user;
 };
 
+const findById = async (id) => {
+  const user = await User.findByPk(id, {
+    attributes: { exclude: ['password'] },
+  });
+  return user;
+};
+
 const create = async ({ displayName, email, password, image = '' }) => {
   const newUser = { displayName, email, password, image };
 
@@ -30,4 +37,5 @@ const create = async ({ displayName, email, password, image = '' }) => {
 module.exports = {
   create,
   findByEmail,
+  findById,
 };
