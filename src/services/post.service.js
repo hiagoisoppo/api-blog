@@ -74,9 +74,16 @@ const update = async ({ postId, userId, title, content }) => {
   return { statusCode: 'SUCCESSFUL', data: updatedPost };
 };
 
+const destroy = async ({ postId, userId }) => {
+  const response = await BlogPost.destroy({ where: { id: postId, userId } });
+  console.log(response);
+  return { statusCode: 'NO_CONTENT' };
+};
+
 module.exports = {
   create,
   listAll,
   findById,
   update,
+  destroy,
 };

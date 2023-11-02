@@ -10,4 +10,6 @@ router.post('/', validateJwtAuth, validateJwtUser, postController.create);
 
 router.put('/:id', validateJwtAuth, validateJwtUser, postController.update);
 
+router.delete('/:id', validateJwtAuth, validateJwtUser, postController.destroy);
+
 module.exports = router;

@@ -25,9 +25,23 @@ const update = async (req, res) => {
   return res.status(httpStatusMap(response.statusCode)).json(response.data);
 };
 
+const destroy = async (req, res) => {
+  const { id } = req.params;
+  const { user } = req;
+
+  const response = await postService.destroy({ postId: id, userId: user.id });
+
+  if (response.statusCode === 'NO_CONTENT') {
+    return res.status(httpStatusMap(response.statusCode)).send();
+  }
+
+  return res.status(httpStatusMap(response.statusCode)).json(response.data);
+};
+
 module.exports = {
   create,
   listAll,
   find,
   update,
+  destroy,
 };
