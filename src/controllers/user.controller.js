@@ -17,8 +17,15 @@ const find = async (req, res) => {
   return res.status(httpStatusMap(response.statusCode)).json(response.data);
 };
 
+const destroy = async (req, res) => {
+  const { user } = req;
+  const response = await userService.destroy(user.id);
+  return res.status(httpStatusMap(response.statusCode)).send();
+};
+
 module.exports = {
   create,
   listAll,
   find,
+  destroy,
 };

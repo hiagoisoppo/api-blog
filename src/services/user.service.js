@@ -44,9 +44,15 @@ const listAll = async () => {
   return { statusCode: 'SUCCESSFUL', data: users };
 };
 
+const destroy = async (id) => {
+  await User.destroy({ where: { id } });
+  return { statusCode: 'NO_CONTENT' };
+};
+
 module.exports = {
   create,
   findByEmail,
   findById,
   listAll,
+  destroy,
 };
