@@ -18,6 +18,18 @@ const find = async (req, res) => {
   return res.status(httpStatusMap(response.statusCode)).json(response.data);
 };
 
+const listByQuery = async (req, res) => {
+  const { q } = req.query;
+  
+  if (!q || q === '') {
+    const allResponse = await postService.listAll();
+    return res.status(httpStatusMap(allResponse.statusCode)).json(allResponse.data);
+  }
+
+  const response = await postService.listByQuery(q);
+  return res.status(httpStatusMap(response.statusCode)).json(response.data);
+};
+
 const update = async (req, res) => {
   const { id } = req.params;
   const { user } = req;
@@ -44,4 +56,5 @@ module.exports = {
   find,
   update,
   destroy,
+  listByQuery,
 };

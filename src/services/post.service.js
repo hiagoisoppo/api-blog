@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const db = require('../models');
 const { BlogPost, PostCategory, User, Category } = require('../models');
 const { createSchema, updateSchema } = require('../validations/post.schemas');
@@ -50,6 +51,22 @@ const findById = async (id) => {
   return { statusCode: 'SUCCESSFUL', data: post };
 };
 
+const listByQuery = async (query) => {
+  const posts = await BlogPost.findAll({
+    where: {
+      [Op.or]: [
+        { title: { [Op.like]: `%${query}%` } },
+        { content: { [Op.like]: `%${query}%` } }],
+    },
+    include: [
+      { model: User, as: 'user', attributes: { exclude: ['password'] } },
+      { model: Category, as: 'categories', through: { attributes: [] } },
+    ],
+  });
+
+  return { statusCode: 'SUCCESSFUL', data: posts };
+};
+
 const update = async ({ postId, userId, title, content }) => {
   const post = await BlogPost.findByPk(postId);
   if (!post) return { statusCode: 'NOT_FOUND', data: { message: 'Post does not exist' } };
@@ -91,5 +108,6 @@ module.exports = {
   listAll,
   findById,
   update,
-  destroy,  
+  destroy,
+  listByQuery, 
 };
