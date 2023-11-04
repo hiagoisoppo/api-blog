@@ -1,0 +1,1205 @@
+_type: export
+__export_format: 4
+__export_date: 2023-11-04T03:25:45.372Z
+__export_source: insomnia.desktop.app:v8.3.0
+resources:
+  - _id: req_b368b947fba64409a8672a7a96b1e35b
+    parentId: wrk_251fb6a567d4441fbf00702126f45ae5
+    modified: 1699067586105
+    created: 1698806922196
+    url: http://localhost:3001/
+    name: "[ GET ] Api Health Test"
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698815266983
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_251fb6a567d4441fbf00702126f45ae5
+    parentId: null
+    modified: 1698806894266
+    created: 1698806894266
+    name: Blog Posts Api
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_9b51cc51898c47c887598dc3c90f6b07
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699067845921
+    created: 1698815272739
+    url: http://localhost:3001/post
+    name: "[ POST ] SUCCESS"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Latest updates, August 1st",
+          "content": "The whole text for the blog post goes here in this key",
+          "categoryIds": [1]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815272739
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_1b868ed3599f4b65bf170132450c7fd3
+    parentId: wrk_251fb6a567d4441fbf00702126f45ae5
+    modified: 1698815266883
+    created: 1698815266883
+    name: /post
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1698815266883
+    _type: request_group
+  - _id: req_08183d1a5f2b4676a527b10db7d63fff
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699068005232
+    created: 1699067986026
+    url: http://localhost:3001/post/1
+    name: "[ PUT ] SUCCESS"
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Latest updates, August 1st",
+          "content": "The whole text for the blog post goes here in this key"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815272019.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2c9ac1f83e6242b58cfc1026e84ca7fd
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699068137419
+    created: 1699068129435
+    url: http://localhost:3001/post/1
+    name: "[ DELETE ] SUCCESS"
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815271974.5312
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_662ad2e6f99f4cf2a23a88ee4898af2e
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699068170540
+    created: 1699068167601
+    url: http://localhost:3001/post/999
+    name: "[ DELETE ] NOT_FOUND"
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815271963.289
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b99b27b84bb54b1688e1779651cf6c6f
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699068153627
+    created: 1699068149938
+    url: http://localhost:3001/post/1
+    name: "[ DELETE ] UNAUTHORIZED"
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+    authentication: {}
+    metaSortKey: -1698815271952.0469
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_662a82129cf5496799c3b24f7c74b095
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699068095369
+    created: 1699068092301
+    url: http://localhost:3001/post/1
+    name: "[ PUT ] BAD_REQUEST { title missing }"
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "content": "The whole text for the blog post goes here in this key"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815271929.5625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_f447a631352b4e139d076c060aefa891
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699068085025
+    created: 1699068082138
+    url: http://localhost:3001/post/1
+    name: "[ PUT ] BAD_REQUEST { content missing }"
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Latest updates, August 1st"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815271839.625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7c9b888f8a5f4882836316d5fa363f7a
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699068029857
+    created: 1699068018212
+    url: http://localhost:3001/post/1
+    name: "[ PUT ] UNAUTHORIZED"
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Latest updates, August 1st",
+          "content": "The whole text for the blog post goes here in this key"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dd3a672c59e04e388ad3097809543000
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+    authentication: {}
+    metaSortKey: -1698815271659.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_11ae1a68362a4618bd724e45a082e30f
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699067871154
+    created: 1699067832600
+    url: http://localhost:3001/post
+    name: "[ GET ] SUCCESS"
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815271300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_925d817386f64f1db20dd1c7ee83183d
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699068235315
+    created: 1699068205473
+    url: http://localhost:3001/post/search
+    name: "[ GET ] SUCCESS { query search }"
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_a602200a2f75447db65e408d71dfff9d
+        name: q
+        value: vamos
+        description: ""
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815271120.125
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b573336b11ed4793848f99bb744d73db
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699068250522
+    created: 1699068246772
+    url: http://localhost:3001/post/search
+    name: "[ GET ] SUCCESS { query search empty }"
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_a602200a2f75447db65e408d71dfff9d
+        name: q
+        value: ""
+        description: ""
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815271030.1875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6da4f2a395ac464780d789a468bcb2db
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699067931771
+    created: 1699067927563
+    url: http://localhost:3001/post/1
+    name: "[ GET ] SUCCESS { :id }"
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815270940.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2f8cc3e2fc17462c8d6ad724a26bd4a6
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699067957831
+    created: 1699067952249
+    url: http://localhost:3001/post/999
+    name: "[ GET ] NOT_FOUND{ :id }"
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815270760.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_74b0b0694b894080b3d35810ca185aa0
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699067909935
+    created: 1699067897608
+    url: http://localhost:3001/post
+    name: "[ GET ] UNAUTHORIZED"
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+    authentication: {}
+    metaSortKey: -1698815270580.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_386ee8328ae4452eb0d55fc56deab4d9
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699067851084
+    created: 1699067694266
+    url: http://localhost:3001/post
+    name: "[ POST ] BAD_REQUEST { title missing }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "content": "The whole text for the blog post goes here in this key",
+          "categoryIds": [1]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815269861
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_22880360ee7741efa808e5ee846274fa
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699067853054
+    created: 1699067708321
+    url: http://localhost:3001/post
+    name: "[ POST ] BAD_REQUEST { content missing }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Latest updates, August 1st",
+          "categoryIds": [1, 2]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815268422
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2787074d41e14d4999d4fc97d698cc3c
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699067854951
+    created: 1699067727000
+    url: http://localhost:3001/post
+    name: "[ POST ] BAD_REQUEST { categories missing }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Latest updates, August 1st",
+          "content": "The whole text for the blog post goes here in this key"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815267702.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a83582101020420aafaa250dd00fe4ed
+    parentId: fld_1b868ed3599f4b65bf170132450c7fd3
+    modified: 1699067857418
+    created: 1699067806790
+    url: http://localhost:3001/post
+    name: "[ POST ] BAD_REQUEST { one or more category not found }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Latest updates, August 1st",
+          "content": "The whole text for the blog post goes here in this key",
+          "categoryIds": [1, 2, 99]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_0645dd0fa201449d90c5d294692535eb
+      - id: pair_66508634f9cf4087b5596e274fdd9449
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698815267342.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_271d7d351ae243ce84f02fb5dffabe4d
+    parentId: fld_4df45bf2e7e14a9484f252fb9fdfaca4
+    modified: 1699067405202
+    created: 1698806986068
+    url: http://localhost:3001/login
+    name: "[ POST ] SUCCESS"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "lewishamilton@gmail.com",
+          "password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698806986068
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_4df45bf2e7e14a9484f252fb9fdfaca4
+    parentId: wrk_251fb6a567d4441fbf00702126f45ae5
+    modified: 1698806912265
+    created: 1698806912265
+    name: /login
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1698806912265
+    _type: request_group
+  - _id: req_5be221807e8245f49a0445afc61d930c
+    parentId: fld_4df45bf2e7e14a9484f252fb9fdfaca4
+    modified: 1699067409607
+    created: 1698807201576
+    url: http://localhost:3001/login
+    name: "[ POST ] BAD_REQUEST { invalid login }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "teste@teste.com",
+          "password": "909090"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698806970100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ec15b4b9aa40420883ab432cf3c88b9b
+    parentId: fld_4df45bf2e7e14a9484f252fb9fdfaca4
+    modified: 1699067413870
+    created: 1698807026478
+    url: http://localhost:3001/login
+    name: "[ POST ] BAD_REQUEST { password missing }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "lewishamilton@gmail.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698806954132
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_186f8db0d3e54a7b8b87cb81ff4f45ad
+    parentId: fld_4df45bf2e7e14a9484f252fb9fdfaca4
+    modified: 1699067418661
+    created: 1698807139206
+    url: http://localhost:3001/login
+    name: "[ POST ] BAD_REQUEST { email missing }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698806938164
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e1ad51d016584290bcb762a254c38699
+    parentId: fld_4e5a857a63754c1883558cbe58db6151
+    modified: 1699067391355
+    created: 1698812116410
+    url: http://localhost:3001/categories
+    name: "[ POST ] SUCCESS"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Typescript"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_57fa3bf5fec84b3cbd13a437937d2d2a
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_6e9d318929264abdb96a758f0421489b
+      - id: pair_449aa873436d468aa2a649dd39ae62a2
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4ODI1NDh9.Ft5nfuUoqGSILsLOXptV3GuvUHj9XCGzbS0WV0cBIF0
+        description: ""
+    authentication: {}
+    metaSortKey: -1698812116410
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_4e5a857a63754c1883558cbe58db6151
+    parentId: wrk_251fb6a567d4441fbf00702126f45ae5
+    modified: 1698812126728
+    created: 1698812113685
+    name: /categories
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1698806908826.5
+    _type: request_group
+  - _id: req_aee05574233944479b2644e1e386abda
+    parentId: fld_4e5a857a63754c1883558cbe58db6151
+    modified: 1699067447610
+    created: 1699067244222
+    url: http://localhost:3001/categories
+    name: "[ GET ] SUCCESS"
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e86703c6f24f48e38e3226db376ed5c7
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_cdd6118ae4f3499487d91c0accc51883
+      - id: pair_72a5d80a763542afa0797524fabccd59
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698810902714.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_74bdb9e6c3c64b6f80735623e5d97551
+    parentId: fld_4e5a857a63754c1883558cbe58db6151
+    modified: 1699067386639
+    created: 1699067203982
+    url: http://localhost:3001/categories
+    name: "[ POST ] BAD_REQUEST"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_57fa3bf5fec84b3cbd13a437937d2d2a
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_6e9d318929264abdb96a758f0421489b
+      - id: pair_449aa873436d468aa2a649dd39ae62a2
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4ODI1NDh9.Ft5nfuUoqGSILsLOXptV3GuvUHj9XCGzbS0WV0cBIF0
+        description: ""
+    authentication: {}
+    metaSortKey: -1698809689019
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9b2d0f8538274b50b10df68c4e9c4189
+    parentId: fld_75d85a116b894a0e84f9302d17715e8d
+    modified: 1699067377270
+    created: 1698807261628
+    url: http://localhost:3001/user
+    name: "[ POST ] SUCCESS"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+          "displayName": "Felipe Wiltshire",
+          "email": "lipe@email.com",
+          "password": "123456",
+          "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698807261628
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_75d85a116b894a0e84f9302d17715e8d
+    parentId: wrk_251fb6a567d4441fbf00702126f45ae5
+    modified: 1698806905388
+    created: 1698806905388
+    name: /user
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1698806905388
+    _type: request_group
+  - _id: req_f092265a22e14ed4aedebaf5f29f6c09
+    parentId: fld_75d85a116b894a0e84f9302d17715e8d
+    modified: 1699067442631
+    created: 1698809887884
+    url: http://localhost:3001/user
+    name: "[ GET ] SUCCESS"
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e86703c6f24f48e38e3226db376ed5c7
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_cdd6118ae4f3499487d91c0accc51883
+      - id: pair_72a5d80a763542afa0797524fabccd59
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698807244405.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_26ef9dd490cc45bfae4614faaf6dfe83
+    parentId: fld_75d85a116b894a0e84f9302d17715e8d
+    modified: 1699067437767
+    created: 1699067165218
+    url: http://localhost:3001/user/1
+    name: "[ GET ] SUCCESS { :id }"
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e86703c6f24f48e38e3226db376ed5c7
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_cdd6118ae4f3499487d91c0accc51883
+      - id: pair_72a5d80a763542afa0797524fabccd59
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698807240099.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b08b139def9d4f3293863dbbdda8dbcb
+    parentId: fld_75d85a116b894a0e84f9302d17715e8d
+    modified: 1699067432436
+    created: 1698810980578
+    url: http://localhost:3001/user/99
+    name: "[ GET ] NOT_FOUND { :id }"
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e86703c6f24f48e38e3226db376ed5c7
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_cdd6118ae4f3499487d91c0accc51883
+      - id: pair_72a5d80a763542afa0797524fabccd59
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698807235794.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_050cb05927fd429ab5e2b88521ef8ef3
+    parentId: fld_75d85a116b894a0e84f9302d17715e8d
+    modified: 1699067370475
+    created: 1698807711661
+    url: http://localhost:3001/user
+    name: "[ POST ] BAD_REQUEST { duplicate email }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+          "displayName": "Brett Wiltshire",
+          "email": "lewishamilton@gmail.com",
+          "password": "123456",
+          "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698807227183
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_bfd7d304f8f5417b8f5e28e8853c00a0
+    parentId: fld_75d85a116b894a0e84f9302d17715e8d
+    modified: 1699067365559
+    created: 1698807648444
+    url: http://localhost:3001/user
+    name: "[ POST ] BAD_REQUEST { password invalid }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+          "displayName": "Hiago Wiltshire",
+          "email": "hiago2@email.com",
+          "password": "1234",
+          "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698807192738
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c29b4a2136de42fe833a61dfcd8b8049
+    parentId: fld_75d85a116b894a0e84f9302d17715e8d
+    modified: 1699067360369
+    created: 1698807572172
+    url: http://localhost:3001/user
+    name: "[ POST ] BAD_REQUEST { displayName invalid }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+          "displayName": "Joao",
+          "email": "joao@email.com",
+          "password": "123456",
+          "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698807123848
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8bca84b16ce04b78957ec2496e6b3efc
+    parentId: fld_75d85a116b894a0e84f9302d17715e8d
+    modified: 1699067354109
+    created: 1698807606586
+    url: http://localhost:3001/user
+    name: "[ POST ] BAD_REQUEST { email invalid }"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+          "displayName": "Joao Luiz Luiz",
+          "email": "joao.com.br",
+          "password": "123456",
+          "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+    authentication: {}
+    metaSortKey: -1698807054958
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9566fabc51a14c9f9d70025eb7bb17f2
+    parentId: fld_75d85a116b894a0e84f9302d17715e8d
+    modified: 1699067519234
+    created: 1699067486181
+    url: http://localhost:3001/user/me
+    name: "[ DELETE ] SUCCESS"
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_8e9cfb768361437a8508201fbe6395c3
+      - id: pair_1ae402079fdc4ba388475b53d4d019e9
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE2OTg4MDg4NTl9.59rF5M0DzIvX_Kf5--37nBV04Hi6IjpJyZ5fT-bRLUg
+        description: ""
+    authentication: {}
+    metaSortKey: -1698807020513
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_0fbe9d163002ecc1f28fb9b716bac0efa348c1de
+    parentId: wrk_251fb6a567d4441fbf00702126f45ae5
+    modified: 1698806894270
+    created: 1698806894270
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1698806894270
+    _type: environment
+  - _id: jar_0fbe9d163002ecc1f28fb9b716bac0efa348c1de
+    parentId: wrk_251fb6a567d4441fbf00702126f45ae5
+    modified: 1698806894274
+    created: 1698806894274
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar

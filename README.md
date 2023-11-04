@@ -69,5 +69,5 @@ An API and a database for producing content on a blog! For this, an application 
 
 ## <summary  id="http">:calling: Using HTTP requests to use the API</summary>
   - Access a platform of your choice to make HTTP requests, such as [ThunderClient](https://www.thunderclient.com/) or [Insomnia](https://insomnia.rest/).
-  - Import the valid HTTP request file for your platform from the `httpClientFiles` folder.
+  - Import the valid HTTP request file for your platform from the `requestCollection` folder.
   - Now you can test this API.
