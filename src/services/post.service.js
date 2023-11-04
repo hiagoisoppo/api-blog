@@ -75,8 +75,14 @@ const update = async ({ postId, userId, title, content }) => {
 };
 
 const destroy = async ({ postId, userId }) => {
-  const response = await BlogPost.destroy({ where: { id: postId, userId } });
-  console.log(response);
+  const post = await BlogPost.findByPk(postId);
+  if (!post) return { statusCode: 'NOT_FOUND', data: { message: 'Post does not exist' } };
+
+  if (post.userId !== userId) {
+    return { statusCode: 'UNAUTHORIZED', data: { message: 'Unauthorized user' } };
+  }
+
+  await BlogPost.destroy({ where: { id: postId } });
   return { statusCode: 'NO_CONTENT' };
 };
 
@@ -85,5 +91,5 @@ module.exports = {
   listAll,
   findById,
   update,
-  destroy,
+  destroy,  
 };
