@@ -55,7 +55,10 @@ A Blog API é uma REST API desenvolvida com o objetivo de gerenciar através de 
   ```
   - Inicie o servidor de desenvolvimento dentro do container.
   ```bash
-    npm run dev
+    npm run drop
+    npm run prestart
+    npm run seed
+    npm run start
   ```
   - Agora vá em “Usando solicitações HTTP para testar a API”.
 
@@ -72,7 +75,10 @@ A Blog API é uma REST API desenvolvida com o objetivo de gerenciar através de 
   - Rename the `env.example` file to `.env`.
   - Inicie o servidor de desenvolvimento.
   ```bash
-    env $(cat .env) npm run dev
+    npm run drop
+    npm run prestart
+    npm run seed
+    env $(cat .env) npm run start
   ```
   - - Agora vá em “Usando solicitações HTTP para testar a API”.
 
@@ -120,7 +126,10 @@ The Blog API is a REST API developed with the aim of managing blog posts through
   ```
   - Start the development server inside the container.
   ```bash
-    npm run dev
+    npm run drop
+    npm run prestart
+    npm run seed
+    npm run start
   ```
   - Now go to "Using HTTP requests to test the API".
 
@@ -137,7 +146,10 @@ The Blog API is a REST API developed with the aim of managing blog posts through
   - Rename the `env.example` file to `.env`.
   - Start the development server.
   ```bash
-    env $(cat .env) npm run dev
+    npm run drop
+    npm run prestart
+    npm run seed
+    env $(cat .env) npm run start
   ```
   - Now go to "Using HTTP requests to test the API".
 
@@ -145,4 +157,298 @@ The Blog API is a REST API developed with the aim of managing blog posts through
   - Access a platform of your choice to make HTTP requests, such as [ThunderClient](https://www.thunderclient.com/) or [Insomnia](https://insomnia.rest/).
   - Import the valid HTTP request file for your platform from the `requestCollection` folder.
   - Now you can test this API.
+</details>
+
+<details>
+  <summary><strong>API REST - Endpoints</strong></summary>
+  
+  ### `GET` /
+  - Health Check response whitout body, just a http status 200.
+
+  ### `POST` /login
+  - Send Body:
+  ```json
+  {
+    "email": "lewishamilton@gmail.com",
+    "password": "123456"
+  }
+  ```
+  - Response:
+  ```json
+  {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+
+  ### `GET` /user
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Response:
+  ```json
+  [
+    {
+      "id": 1,
+      "displayName": "Lewis Hamilton",
+      "email": "lewishamilton@gmail.com",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
+    },
+    {
+      "id": 2,
+      "displayName": "Michael Schumacher",
+      "email": "MichaelSchumacher@gmail.com",
+      "image": "https://sportbuzz.uol.com.br/media/_versions/gettyimages-52491565_widelg.jpg"
+    },
+    ...
+  ]
+  ```
+
+  ### `GET` /user/:id
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Response:
+  ```json
+  {
+    "id": 1,
+    "displayName": "Lewis Hamilton",
+    "email": "lewishamilton@gmail.com",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
+  }
+  ```
+
+  ### `DELETE` /user/me
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Delete response whitout body, just a http status 204.
+
+  ### `POST` /user
+  - Send Body:
+  ```json
+  {
+    "displayName": "Felipe Wiltshire",
+    "email": "lipe@email.com",
+    "password": "123456",
+    "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+  }
+  ```
+  - Response:
+  ```json
+  {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZGlzcGxheU5hbWUiOiJGZWxpcGUgV2lsdHNoaXJlIiwiZW1haWwiOiJsaXBlQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaW1hZ2UiOiJodHRwOi8vNC5icC5ibG9nc3BvdC5jb20vX1lBNTBhZFEtN3ZRL1MxZ2ZSXzZ1ZnBJL0FBQUFBQUFBQUFrLzFFckpHZ1JXWkRnL1M0NS9icmV0dC5wbmciLCJpYXQiOjE3MDQzMTQ0OTJ9._tBFpBGufKqSuCRvB2KF8ztBaq-ZrjoI_XBbygjP8gU"
+  }
+  ```
+  ### `GET` /categories
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Response:
+  ```json
+  [
+    {
+      "id": 1,
+      "name": "Inovação"
+    },
+    {
+      "id": 2,
+      "name": "Escola"
+    },
+    ...
+  ]
+  ```
+
+  ### `POST` /categories
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Send Body:
+  ```json
+  {
+    "name": "Typescript"
+  }
+  ```
+  - Response:
+  ```json
+  {
+    "id": 3,
+    "name": "Typescript"
+  }
+  ```
+
+  ### `POST` /post
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Send Body:
+  ```json
+  {
+    "title": "Latest updates, August 1st",
+    "content": "The whole text for the blog post goes here in this key",
+    "categoryIds": [1]
+  }
+  ```
+  - Response:
+  ```json
+  {
+    "id": 3,
+    "title": "Latest updates, August 1st",
+    "content": "The whole text for the blog post goes here in this key",
+    "userId": 3,
+    "published": "2024-01-03T20:47:14.296Z",
+    "updated": "2024-01-03T20:47:14.296Z"
+  }
+  ```
+
+  ### `GET` /post
+  ##### `Search by text option` /post/search?q=`string`
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Response:
+  ```json
+  [
+    {
+      "id": 3,
+      "title": "Latest updates, August 1st",
+      "content": "The whole text for the blog post goes here in this key",
+      "published": "2024-01-03T20:47:14.000Z",
+      "updated": "2024-01-03T20:47:14.000Z",
+      "userId": 3,
+      "user": {
+        "id": 3,
+        "displayName": "Felipe Wiltshire",
+        "email": "lipe@email.com",
+        "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+      },
+      "categories": [
+        {
+          "id": 1,
+          "name": "Inovação"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Old updates, May 1st",
+      "content": "its me mario in the blog",
+      "published": "2024-01-03T20:48:43.000Z",
+      "updated": "2024-01-03T20:48:43.000Z",
+      "userId": 3,
+      "user": {
+        "id": 3,
+        "displayName": "Felipe Wiltshire",
+        "email": "lipe@email.com",
+        "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+      },
+      "categories": [
+        {
+          "id": 1,
+          "name": "Inovação"
+        }
+      ]
+    },
+    ...
+  ]
+  ```
+
+  ### `GET` /post/:id
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Response:
+  ```json
+  {
+    "id": 3,
+    "title": "Latest updates, August 1st",
+    "content": "The whole text for the blog post goes here in this key",
+    "published": "2024-01-03T20:47:14.000Z",
+    "updated": "2024-01-03T20:47:14.000Z",
+    "userId": 3,
+    "user": {
+      "id": 3,
+      "displayName": "Felipe Wiltshire",
+      "email": "lipe@email.com",
+      "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+    },
+    "categories": [
+      {
+        "id": 1,
+        "name": "Inovação"
+      }
+    ]
+  }
+  ```
+
+   ### `PUT` /post/:id
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Send Body:
+  ```json
+  {
+    "title": "Latest updates, August 111111st",
+    "content": "The whole text for the blog post goes here in this key"
+  }
+  ```
+  - Response:
+  ```json
+  {
+    "id": 3,
+    "title": "Latest updates, August 111111st",
+    "content": "The whole text for the blog post goes here in this key",
+    "published": "2024-01-03T20:47:14.000Z",
+    "updated": "2024-01-03T20:47:14.000Z",
+    "userId": 3,
+    "user": {
+      "id": 3,
+      "displayName": "Felipe Wiltshire",
+      "email": "lipe@email.com",
+      "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
+    },
+    "categories": [
+      {
+        "id": 1,
+        "name": "Inovação"
+      }
+    ]
+  }
+  ```
+
+  ### `DELETE` /post/:id
+  - Send Header:
+  ```json
+  {
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNzA0MzE0MDA0fQ.Kg50LS-pBr5n1o3lhTRT7PewymAYX367rZebuiHNxZ4"
+  }
+  ```
+  - Delete response whitout body, just a http status 204.
+
 </details>
